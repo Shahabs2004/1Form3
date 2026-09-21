@@ -75,7 +75,7 @@
 		{
 			"eventId": "EVENT_BEFOREDELETE",
 			"pageType": "list",
-			"code": "// Place event code here.\n// Use \"Add Action\" button to add code snippets.\ndynamic rs = DB.Query(\"select * from OneForm_Fields where Group_ID=\"+deleted_values[\"ID\"]); \ndynamic data = rs.fetchAssoc(); \nif(data) {  \n    message = \"رکورد قابل حذف نیست-سوالهای مرتبط دارد\"; \n    return false;\n} else {  \n    // if dont exist do something else \nreturn true;\n}"
+			"code": "if (deleted_values == null)\r\n{\r\n    message = \"خطا: اطلاعات رکورد برای حذف دریافت نشد\";\r\n    return false;\r\n}\r\n\r\nif (deleted_values[\"ID\"] == null)\r\n{\r\n    message = \"خطا: ID رکورد دریافت نشد\";\r\n    return false;\r\n}\r\n\r\nint fieldId = int.Parse(deleted_values[\"ID\"].ToString());\r\n\r\ndynamic fileId = DB.DBLookup(\r\n    \"SELECT TOP 1 ID \" +\r\n    \"FROM OneForm_Fields \" +\r\n    \"WHERE Group_ID = \" + fieldId\r\n);\r\n\r\nif (fileId != null)\r\n{\r\n    message = \"رکورد قابل حذف نیست - هنوز سوال مرتبط دارد\";\r\n    return false;\r\n}\r\n// No related records\r\nreturn true;"
 		}
 	],
 	"dbTableInfo": {
