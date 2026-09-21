@@ -303,6 +303,13 @@
 		}
 	],
 	"warnLeavingEdit": true,
+	"eventHandlers": [
+		{
+			"eventId": "EVENT_BEFOREDELETE",
+			"pageType": "list",
+			"code": "\n//**********  Check if specific record exists  ************  \ndynamic rs = DB.Query(\"select * from OneForm_Value_Files where OneForm_Value_ID=\"+deleted_values[\"ID\"]); \ndynamic data = rs.fetchAssoc(); \nif(data) {  \n    message = \"رکورد قابل حذف نیست-هنوز فایلهای مرتبط دارد\"; \n    return false;\n} else {  \n    // if dont exist do something else \nreturn true;\n}\n\nrs = DB.Query(\"select * from OneForm_Value_Images where OneForm_Value_ID=\"+deleted_values[\"ID\"]); \ndata = rs.fetchAssoc();\nif(data) {  \n    message = \"رکورد قابل حذف نیست-هنوز تصاویر مرتبط دارد\"; \n    return false;\n} else {  \n    // if dont exist do something else \nreturn true;\n}\n// Place event code here.\n// Use \"Add Action\" button to add code snippets.\n\n"
+		}
+	],
 	"resizeColumns": true,
 	"dbTableInfo": {
 		"type": 0,

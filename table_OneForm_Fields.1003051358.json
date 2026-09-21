@@ -159,6 +159,13 @@
 			"tableName": "dbo.OneForm_Fields"
 		}
 	],
+	"eventHandlers": [
+		{
+			"eventId": "EVENT_BEFOREDELETE",
+			"pageType": "list",
+			"code": "// Place event code here.\n// Use \"Add Action\" button to add code snippets.\n\ndynamic rs = DB.Query(\"select * from OneForm_Value where Field_ID='\"+deleted_values[\"ID\"]+\"'\"); \ndynamic data = rs.fetchAssoc(); \nif(data) {  \n    message = \"رکورد قابل حذف نیست-هنوز فایلهای مرتبط دارد\"; \n    return false;\n} else {  \n    // if dont exist do something else \nreturn true;\n}"
+		}
+	],
 	"dbTableInfo": {
 		"type": 0,
 		"foreignKeys": [],

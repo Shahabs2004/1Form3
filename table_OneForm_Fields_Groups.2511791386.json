@@ -71,6 +71,13 @@
 			"tableName": "dbo.OneForm_Fields_Groups"
 		}
 	],
+	"eventHandlers": [
+		{
+			"eventId": "EVENT_BEFOREDELETE",
+			"pageType": "list",
+			"code": "// Place event code here.\n// Use \"Add Action\" button to add code snippets.\ndynamic rs = DB.Query(\"select * from OneForm_Fields where Group_ID=\"+deleted_values[\"ID\"]); \ndynamic data = rs.fetchAssoc(); \nif(data) {  \n    message = \"رکورد قابل حذف نیست-سوالهای مرتبط دارد\"; \n    return false;\n} else {  \n    // if dont exist do something else \nreturn true;\n}"
+		}
+	],
 	"dbTableInfo": {
 		"type": 0,
 		"foreignKeys": [],
