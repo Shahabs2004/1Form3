@@ -1,5 +1,13 @@
 {
-	"sql": "SELECT\r\n\tID,\r\n\tGroup_ID,\r\n\tFieldTitle,\r\n\tFieldType,\r\n\tFields_Desc\r\nFROM\r\n\tdbo.OneForm_Fields",
+	"orderInfo": [
+		{
+			"index": 1,
+			"field": "ID",
+			"expr": "ID",
+			"asc": true
+		}
+	],
+	"sql": "SELECT\n\tID,\n\tGroup_ID,\n\tFieldTitle,\n\tFieldType,\n\tFields_Desc\nFROM\n\tdbo.OneForm_Fields\nORDER BY\n\tID\n",
 	"connId": "conn",
 	"originalTable": "dbo.OneForm_Fields",
 	"name": "dbo.OneForm_Fields",

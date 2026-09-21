@@ -13,8 +13,8 @@
 			},
 			{
 				"gid": 1003051358,
-				"y": 317,
-				"x": 643,
+				"y": 27,
+				"x": 644,
 				"width": 211.515625,
 				"height": 196
 			},
@@ -26,11 +26,25 @@
 				"height": 96
 			},
 			{
+				"gid": 4033989301,
+				"y": 407,
+				"x": 648,
+				"width": 235.28125,
+				"height": 152
+			},
+			{
 				"gid": 2139878960,
 				"y": 122,
-				"x": 377,
+				"x": 251,
 				"width": 215.9375,
 				"height": 363
+			},
+			{
+				"gid": 2151822016,
+				"y": 237,
+				"x": 635,
+				"width": 269.625,
+				"height": 152
 			}
 		]
 	},
@@ -302,6 +316,40 @@
 							"table": 2139878960,
 							"pageType": "list"
 						}
+					},
+					{
+						"id": "5",
+						"data": {
+							"name": {
+								"table": "dbo.OneForm_Value_Files",
+								"type": 6
+							},
+							"pageId": "list",
+							"itemType": 2,
+							"linkType": 0,
+							"iconType": 2,
+							"iconName": "glyphicon-headphones",
+							"showIconType": 2,
+							"table": 4033989301,
+							"pageType": "list"
+						}
+					},
+					{
+						"id": "6",
+						"data": {
+							"name": {
+								"table": "dbo.OneForm_Values_Images",
+								"type": 6
+							},
+							"pageId": "list",
+							"itemType": 2,
+							"linkType": 0,
+							"iconType": 2,
+							"iconName": "glyphicon-heart-empty",
+							"showIconType": 2,
+							"table": 2151822016,
+							"pageType": "list"
+						}
 					}
 				]
 			}
@@ -392,7 +440,9 @@
 								"welcome_item",
 								"welcome_item1",
 								"welcome_item2",
-								"welcome_item3"
+								"welcome_item3",
+								"welcome_item4",
+								"welcome_item5"
 							]
 						}
 					},
@@ -503,6 +553,40 @@
 				},
 				"adminarea_link": {
 					"type": "adminarea_link"
+				},
+				"welcome_item4": {
+					"type": "welcome_item",
+					"linkUrl": "",
+					"linkTable": "dbo.OneForm_Value_Files",
+					"linkPage": "list",
+					"linkText": {
+						"table": "dbo.OneForm_Value_Files",
+						"type": 6
+					},
+					"linkIcon": {
+						"glyph": "headphones"
+					},
+					"linkComments": {
+						"text": "One Form Value Files description",
+						"type": 0
+					},
+					"background": "#00c2c5",
+					"linkType": 0
+				},
+				"welcome_item5": {
+					"type": "welcome_item",
+					"linkUrl": "",
+					"linkTable": "dbo.OneForm_Values_Images",
+					"linkPage": "list",
+					"linkText": {
+						"table": "dbo.OneForm_Values_Images",
+						"type": 6
+					},
+					"linkIcon": {
+						"glyph": "heart-empty"
+					},
+					"background": "#00c2c5",
+					"linkType": 0
 				}
 			},
 			"dbProps": {},

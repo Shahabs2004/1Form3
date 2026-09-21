@@ -1,8 +1,0 @@
-C:\runnerapps\1Form3\bin\runnerDotNet.dll.config
-C:\runnerapps\1Form3\bin\runnerDotNet.dll
-C:\runnerapps\1Form3\bin\runnerDotNet.pdb
-C:\runnerapps\1Form3\obj\Release\1Form3.csproj.AssemblyReference.cache
-C:\runnerapps\1Form3\obj\Release\1Form3.csproj.CoreCompileInputs.cache
-C:\runnerapps\1Form3\obj\Release\1Form3.csproj.Up2Date
-C:\runnerapps\1Form3\obj\Release\runnerDotNet.dll
-C:\runnerapps\1Form3\obj\Release\runnerDotNet.pdb
