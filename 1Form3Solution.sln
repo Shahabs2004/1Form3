@@ -1,0 +1,8 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2022Project("{{64FFBE60-C56A-4F53-85EF-829D7A32391C}}") = "1Form3", "1Form3.csproj", "{64FFBE60-C56A-4F53-85EF-829D7A32391C}"
+EndProject
+Project("{{64FFBE60-C56A-4F53-85EF-829D7A32391E}}") = "1Form3EventsVB", "1Form3EventsVB.vbproj", "{64FFBE60-C56A-4F53-85EF-829D7A32391E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{64FFBE60-C56A-4F53-85EF-829D7A32391C} = {64FFBE60-C56A-4F53-85EF-829D7A32391C}
+	EndProjectSection
+EndProject
