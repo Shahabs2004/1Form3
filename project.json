@@ -1,0 +1,1652 @@
+{
+	"programVersion": 2,
+	"versionName": "11.1",
+	"name": "1Form3",
+	"mainDiagram": {
+		"tables": [
+			{
+				"gid": 2043860093,
+				"y": 10,
+				"x": 20,
+				"width": 155.40625,
+				"height": 152
+			},
+			{
+				"gid": 1003051358,
+				"y": 317,
+				"x": 643,
+				"width": 211.515625,
+				"height": 196
+			},
+			{
+				"gid": 2511791386,
+				"y": 122,
+				"x": 904,
+				"width": 254.203125,
+				"height": 96
+			},
+			{
+				"gid": 2139878960,
+				"y": 122,
+				"x": 377,
+				"width": 215.9375,
+				"height": 363
+			}
+		]
+	},
+	"securitySettings": {
+		"loginForm": 0,
+		"dynamicPermissions": true,
+		"dpTablePrefix": "dbo.OneForm_",
+		"dpTableConnId": "conn",
+		"providers": [
+			{
+				"useAdGroups": true,
+				"type": "%ad",
+				"name": "ad",
+				"active": true,
+				"label": {
+					"text": "Active Directory",
+					"type": 0
+				},
+				"code": "ad",
+				"url": "LDAP://10.7.1.10",
+				"domain": "FRS.Local",
+				"baseDN": "DC=FRS,DC=Local",
+				"loginAutomatically": false,
+				"admins": [
+					"sh-sadeghi",
+					"DCManager"
+				]
+			}
+		],
+		"sessionControl": {
+			"lifeTime": 15,
+			"sessionName": "vPPX1C7gQscIdNCT4WwU",
+			"JWTSecret": "WqPmeH3GbOueSoeo7Z3u",
+			"keepAlive": true,
+			"forceExpire": false
+		},
+		"registration": {
+			"remindMethod": 0,
+			"hashAlgorithm": 0,
+			"caseInsensitiveLogin": true,
+			"passwordValidation": {
+				"strong": false,
+				"minimumLength": 8,
+				"uniqueCharacters": 4,
+				"digitsAndSymbols": 2,
+				"upperAndLowerCase": false
+			}
+		},
+		"captchaSettings": {
+			"captchaType": 0,
+			"siteKey": "",
+			"secretKey": "",
+			"passesCount": 5
+		},
+		"emailSettings": {
+			"fromEmail": "",
+			"usePHPDefinedSMTP": false,
+			"useBuiltInMailer": false,
+			"SMTPServer": "localhost",
+			"SMTPPort": 25,
+			"SMTPUser": "",
+			"SMTPPassword": "",
+			"securityProtocol": 0
+		},
+		"advancedSecurity": {
+			"allowGuestLogin": true
+		},
+		"auditAndLocking": {
+			"loggingMode": 1,
+			"loggingTable": {
+				"connId": "conn",
+				"table": "dbo.HWFlow_SQL2019_audit"
+			},
+			"loggingFile": "audit.log",
+			"logSecurityActions": true,
+			"lockAfterUnsuccessfulLogin": false,
+			"enableLocking": true,
+			"lockingTable": {
+				"connId": "conn",
+				"table": "dbo.Oneform_locking"
+			},
+			"tables": {
+				"1003051358": {
+					"logModifications": true,
+					"logFieldValues": true,
+					"recordLocking": true
+				},
+				"2043860093": {},
+				"2139878960": {
+					"logModifications": true,
+					"logFieldValues": true,
+					"recordLocking": true
+				},
+				"2511791386": {
+					"logModifications": true,
+					"logFieldValues": true,
+					"recordLocking": true
+				}
+			}
+		},
+		"twoFactorSettings": {
+			"available": false,
+			"required": false,
+			"enable": true,
+			"remember": true,
+			"types": {},
+			"twoFactorField": "",
+			"emailField": "",
+			"phoneField": "",
+			"codeField": "",
+			"projectName": ""
+		},
+		"staticPermissions": {
+			"groups": {
+				"<Default>": {
+					"permissions": {
+						"dbo.Branches": {
+							"mask": "ADESPI",
+							"table": "dbo.Branches",
+							"restrictedPages": {}
+						},
+						"dbo.OneForm_Fields": {
+							"mask": "ADESPI",
+							"table": "dbo.OneForm_Fields",
+							"restrictedPages": {}
+						},
+						"dbo.OneForm_Fields_Groups": {
+							"mask": "ADESPI",
+							"table": "dbo.OneForm_Fields_Groups",
+							"restrictedPages": {}
+						},
+						"dbo.OneForm_Values": {
+							"mask": "ADESPI",
+							"table": "dbo.OneForm_Values",
+							"restrictedPages": {}
+						},
+						"<global>": {
+							"mask": "ADESPI",
+							"table": "<global>",
+							"restrictedPages": {}
+						}
+					},
+					"admin": false,
+					"username": "<Default>"
+				},
+				"<Guest>": {
+					"permissions": {
+						"dbo.Branches": {
+							"mask": "S",
+							"table": "dbo.Branches",
+							"restrictedPages": {}
+						},
+						"dbo.OneForm_Fields": {
+							"mask": "S",
+							"table": "dbo.OneForm_Fields",
+							"restrictedPages": {}
+						},
+						"dbo.OneForm_Fields_Groups": {
+							"mask": "S",
+							"table": "dbo.OneForm_Fields_Groups",
+							"restrictedPages": {}
+						},
+						"dbo.OneForm_Values": {
+							"mask": "S",
+							"table": "dbo.OneForm_Values",
+							"restrictedPages": {}
+						},
+						"<global>": {
+							"mask": "S",
+							"table": "<global>",
+							"restrictedPages": {}
+						}
+					}
+				}
+			}
+		}
+	},
+	"visualStudioVersion": 17,
+	"targetFramework": "4.8",
+	"createRestAPI": true,
+	"restAPIAcceptEncodedBinary": true,
+	"lcid": 1065,
+	"defaultLanguage": "Farsi",
+	"languages": [
+		"Farsi"
+	],
+	"dbConnections": [
+		{
+			"id": "conn",
+			"name": "Mekanizeh at 10.7.1.42",
+			"type": 2,
+			"connString": "mssql;10.7.1.42;sa;Admin@Sql;Mekanizeh;0;0"
+		}
+	],
+	"defaultConnID": "conn",
+	"enablePDF": false,
+	"landingSettings": {
+		"url": "/menu?page=menu"
+	},
+	"menus": [
+		{
+			"id": "main",
+			"root": {
+				"children": [
+					{
+						"id": "1",
+						"data": {
+							"name": {
+								"table": "dbo.Branches",
+								"type": 6
+							},
+							"pageId": "list",
+							"itemType": 2,
+							"linkType": 0,
+							"iconType": 2,
+							"iconName": "glyphicon-barcode",
+							"showIconType": 2,
+							"table": 2043860093,
+							"pageType": "list"
+						}
+					},
+					{
+						"id": "3",
+						"data": {
+							"name": {
+								"table": "dbo.OneForm_Fields_Groups",
+								"type": 6
+							},
+							"pageId": "list",
+							"itemType": 2,
+							"linkType": 0,
+							"iconType": 2,
+							"iconName": "glyphicon-flash",
+							"showIconType": 2,
+							"table": 2511791386,
+							"pageType": "list"
+						}
+					},
+					{
+						"id": "2",
+						"data": {
+							"name": {
+								"table": "dbo.OneForm_Fields",
+								"type": 6
+							},
+							"pageId": "list",
+							"itemType": 2,
+							"linkType": 0,
+							"iconType": 2,
+							"iconName": "glyphicon-send",
+							"showIconType": 2,
+							"table": 1003051358,
+							"pageType": "list"
+						}
+					},
+					{
+						"id": "4",
+						"data": {
+							"name": {
+								"table": "dbo.OneForm_Values",
+								"type": 6
+							},
+							"pageId": "list",
+							"itemType": 2,
+							"linkType": 0,
+							"iconType": 2,
+							"iconName": "glyphicon-barcode",
+							"showIconType": 2,
+							"table": 2139878960,
+							"pageType": "list"
+						}
+					}
+				]
+			}
+		}
+	],
+	"customTemplates": {
+		"header": ""
+	},
+	"globalPages": [
+		{
+			"id": "menu",
+			"type": "menu",
+			"layoutId": "topbar",
+			"disabled": false,
+			"default": 0,
+			"forms": {
+				"above-grid": {
+					"modelId": "empty-above-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": []
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"supertop": {
+					"modelId": "menu-topbar-menu",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								},
+								{
+									"cell": "c2"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"logo",
+								"menu"
+							]
+						},
+						"c2": {
+							"model": "c2",
+							"items": [
+								"loginform_login",
+								"username_button"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"grid": {
+					"modelId": "welcome",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"welcome_item",
+								"welcome_item1",
+								"welcome_item2",
+								"welcome_item3"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				}
+			},
+			"items": {
+				"logo": {
+					"type": "logo"
+				},
+				"menu": {
+					"type": "menu"
+				},
+				"welcome_item": {
+					"type": "welcome_item",
+					"linkUrl": "",
+					"linkTable": "dbo.Branches",
+					"linkPage": "list",
+					"linkText": {
+						"table": "dbo.Branches",
+						"type": 6
+					},
+					"linkIcon": {
+						"glyph": "barcode",
+						"style": 0
+					},
+					"linkComments": {
+						"type": 0,
+						"text": "فهرست شعب و دسترسی مستقیم به تمامی اطلاعات یک شعبه"
+					},
+					"background": "#bc8f8f",
+					"linkType": 0
+				},
+				"welcome_item1": {
+					"type": "welcome_item",
+					"linkUrl": "",
+					"linkTable": "dbo.OneForm_Fields",
+					"linkPage": "list",
+					"linkText": {
+						"type": 0,
+						"text": "عناوین و سوالات"
+					},
+					"linkIcon": {
+						"glyph": "send",
+						"style": 0
+					},
+					"linkComments": {
+						"type": 0,
+						"text": "فهرستی از سوالات و عناوین موجود در تمامی فرم ها"
+					},
+					"background": "#4169e1",
+					"linkType": 0
+				},
+				"welcome_item2": {
+					"type": "welcome_item",
+					"linkUrl": "",
+					"linkTable": "dbo.OneForm_Fields_Groups",
+					"linkPage": "list",
+					"linkText": {
+						"type": 0,
+						"text": "فرم ها و گروه سوالات"
+					},
+					"linkIcon": {
+						"glyph": "flash",
+						"style": 0
+					},
+					"linkComments": {
+						"type": 0,
+						"text": "فرم ها و گروه های سوالات"
+					},
+					"background": "#d2691e",
+					"linkType": 0
+				},
+				"welcome_item3": {
+					"type": "welcome_item",
+					"linkUrl": "",
+					"linkTable": "dbo.OneForm_Values",
+					"linkPage": "list",
+					"linkText": {
+						"table": "dbo.OneForm_Values",
+						"type": 6
+					},
+					"linkIcon": {
+						"glyph": "barcode",
+						"style": 0
+					},
+					"linkComments": {
+						"type": 0,
+						"text": "تمامی اطلاعات ثبت شده و پاسخ های سوالات"
+					},
+					"background": "#cd853f",
+					"linkType": 0
+				},
+				"username_button": {
+					"type": "username_button",
+					"items": [
+						"logout_link",
+						"adminarea_link"
+					]
+				},
+				"loginform_login": {
+					"type": "loginform_login",
+					"popup": false
+				},
+				"logout_link": {
+					"type": "logout_link"
+				},
+				"adminarea_link": {
+					"type": "adminarea_link"
+				}
+			},
+			"dbProps": {},
+			"version": 13,
+			"imageItem": {
+				"type": "page_image"
+			},
+			"imageBgColor": "#f2f2f2",
+			"controlsBgColor": "white",
+			"imagePosition": "right",
+			"welcomePageStay": true,
+			"listTotals": 1,
+			"title": {}
+		},
+		{
+			"id": "login",
+			"type": "login",
+			"layoutId": "pretty1",
+			"disabled": false,
+			"default": 0,
+			"forms": {
+				"above-grid": {
+					"modelId": "login-above-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c2"
+								}
+							],
+							"section": ""
+						},
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c2": {
+							"model": "c2",
+							"items": []
+						},
+						"c1": {
+							"model": "c1",
+							"items": [
+								"login_message"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"top": {
+					"modelId": "plogin-header",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								},
+								{
+									"cell": "c2"
+								}
+							],
+							"section": ""
+						},
+						{
+							"cells": [
+								{
+									"cell": "c3",
+									"colspan": 2
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"login-logo"
+							]
+						},
+						"c2": {
+							"model": "c2",
+							"items": []
+						},
+						"c3": {
+							"model": "c3",
+							"items": [
+								"login_welcome"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"grid": {
+					"modelId": "plogin-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1",
+									"colspan": 2
+								}
+							],
+							"section": ""
+						},
+						{
+							"cells": [
+								{
+									"cell": "c2",
+									"colspan": 2
+								}
+							],
+							"section": ""
+						},
+						{
+							"cells": [
+								{
+									"cell": "c4"
+								},
+								{
+									"cell": "c6"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c4": {
+							"model": "c4",
+							"items": [
+								"remember_password"
+							]
+						},
+						"c6": {
+							"model": "c6",
+							"items": [
+								"guest_login"
+							]
+						},
+						"c1": {
+							"model": "c1",
+							"items": [
+								"username_label",
+								"username"
+							]
+						},
+						"c2": {
+							"model": "c2",
+							"items": [
+								"password_label",
+								"password"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"footer": {
+					"modelId": "plogin-footer",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								},
+								{
+									"cell": "c2"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"login_button"
+							]
+						},
+						"c2": {
+							"model": "c2",
+							"items": []
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"superbottom": {
+					"modelId": "plogin-superbottom",
+					"grid": [],
+					"cells": {},
+					"deferredItems": [],
+					"recsPerRow": 1
+				}
+			},
+			"items": {
+				"login_message": {
+					"type": "login_message"
+				},
+				"guest_login": {
+					"type": "guest_login"
+				},
+				"login-logo": {
+					"type": "login-logo",
+					"font-size": "24px"
+				},
+				"login_welcome": {
+					"type": "login_welcome"
+				},
+				"username_label": {
+					"type": "username_label"
+				},
+				"username": {
+					"type": "username"
+				},
+				"password_label": {
+					"type": "password_label"
+				},
+				"password": {
+					"type": "password"
+				},
+				"remember_password": {
+					"type": "remember_password"
+				},
+				"login_button": {
+					"type": "login_button"
+				}
+			},
+			"dbProps": {},
+			"version": 13,
+			"imageItem": {
+				"type": "page_image",
+				"shadow": false,
+				"fullSize": true,
+				"image": {
+					"source": 1,
+					"image": "pexels-anete-lusina-5239790.jpg"
+				}
+			},
+			"imageBgColor": "#f2f2f2",
+			"controlsBgColor": "white",
+			"imagePosition": "right",
+			"listTotals": 1,
+			"title": {}
+		},
+		{
+			"id": "admin_rights_list",
+			"type": "admin_rights_list",
+			"layoutId": "topbar",
+			"disabled": false,
+			"default": 0,
+			"forms": {
+				"above-grid": {
+					"modelId": "admin-rights-above-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								},
+								{
+									"cell": "c2"
+								}
+							],
+							"section": ""
+						},
+						{
+							"cells": [
+								{
+									"cell": "c4",
+									"colspan": 2
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"rights_save",
+								"rights_reset"
+							]
+						},
+						"c2": {
+							"model": "c2",
+							"items": [
+								"rights_displaying_tables",
+								"rights_ordering_tables"
+							]
+						},
+						"c4": {
+							"model": "c4",
+							"items": [
+								"rights_add_group",
+								"rights_del_group",
+								"rights_rename_group",
+								"rights_copy_permissions"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"below-grid": {
+					"modelId": "admin-header",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": []
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"supertop": {
+					"modelId": "admin-topbar-menu",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								},
+								{
+									"cell": "c2"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"logo",
+								"menu"
+							]
+						},
+						"c2": {
+							"model": "c2",
+							"items": [
+								"username_button"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"top": {
+					"modelId": "admin-header",
+					"grid": [],
+					"cells": {},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"grid": {
+					"modelId": "admin-rights-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "headcell_search"
+								},
+								{
+									"cell": "headcell_a"
+								},
+								{
+									"cell": "headcell_e"
+								},
+								{
+									"cell": "headcell_d"
+								},
+								{
+									"cell": "headcell_s"
+								},
+								{
+									"cell": "headcell_p"
+								},
+								{
+									"cell": "headcell_i"
+								},
+								{
+									"cell": "headcell_m"
+								}
+							],
+							"section": "head"
+						},
+						{
+							"cells": [
+								{
+									"cell": "headcell_expand"
+								},
+								{
+									"cell": "headcell_all_a"
+								},
+								{
+									"cell": "headcell_all_e"
+								},
+								{
+									"cell": "headcell_all_d"
+								},
+								{
+									"cell": "headcell_all_s"
+								},
+								{
+									"cell": "headcell_all_p"
+								},
+								{
+									"cell": "headcell_all_i"
+								},
+								{
+									"cell": "headcell_all_m"
+								}
+							],
+							"section": "head"
+						},
+						{
+							"cells": [
+								{
+									"cell": "cell_table"
+								},
+								{
+									"cell": "cell_a"
+								},
+								{
+									"cell": "cell_e"
+								},
+								{
+									"cell": "cell_d"
+								},
+								{
+									"cell": "cell_s"
+								},
+								{
+									"cell": "cell_p"
+								},
+								{
+									"cell": "cell_i"
+								},
+								{
+									"cell": "cell_m"
+								}
+							],
+							"section": "body"
+						},
+						{
+							"cells": [
+								{
+									"cell": "cell_page"
+								},
+								{
+									"cell": "cell_page_a"
+								},
+								{
+									"cell": "cell_page_e"
+								},
+								{
+									"cell": "cell_page_d"
+								},
+								{
+									"cell": "cell_page_s"
+								},
+								{
+									"cell": "cell_page_p"
+								},
+								{
+									"cell": "cell_page_i"
+								},
+								{
+									"cell": "cell_page_m"
+								}
+							],
+							"section": "page"
+						}
+					],
+					"cells": {
+						"headcell_search": {
+							"model": "headcell_search",
+							"items": [
+								"rights_search"
+							]
+						},
+						"headcell_a": {
+							"model": "headcell_a",
+							"items": [
+								"rights_name_a"
+							]
+						},
+						"headcell_e": {
+							"model": "headcell_e",
+							"items": [
+								"rights_name_e"
+							]
+						},
+						"headcell_d": {
+							"model": "headcell_d",
+							"items": [
+								"rights_name_d"
+							]
+						},
+						"headcell_s": {
+							"model": "headcell_s",
+							"items": [
+								"rights_name_s"
+							]
+						},
+						"headcell_p": {
+							"model": "headcell_p",
+							"items": [
+								"rights_name_p"
+							]
+						},
+						"headcell_i": {
+							"model": "headcell_i",
+							"items": [
+								"rights_name_i"
+							]
+						},
+						"headcell_m": {
+							"model": "headcell_m",
+							"items": [
+								"rights_name_m",
+								"rights_name_m1"
+							]
+						},
+						"cell_page": {
+							"model": "cell_page",
+							"items": [
+								"rights_checkbox_page",
+								"rights_page"
+							]
+						},
+						"cell_page_a": {
+							"model": "cell_page_a",
+							"items": [
+								"rights_checkbox_page_a"
+							]
+						},
+						"cell_page_e": {
+							"model": "cell_page_e",
+							"items": [
+								"rights_checkbox_page_e"
+							]
+						},
+						"cell_page_d": {
+							"model": "cell_page_d",
+							"items": [
+								"rights_checkbox_page_d"
+							]
+						},
+						"cell_page_s": {
+							"model": "cell_page_s",
+							"items": [
+								"rights_checkbox_page_s"
+							]
+						},
+						"cell_page_p": {
+							"model": "cell_page_p",
+							"items": [
+								"rights_checkbox_page_p"
+							]
+						},
+						"cell_page_i": {
+							"model": "cell_page_i",
+							"items": [
+								"rights_checkbox_page_i"
+							]
+						},
+						"cell_page_m": {
+							"model": "cell_page_m",
+							"items": []
+						},
+						"headcell_expand": {
+							"model": "headcell_expand",
+							"items": [
+								"rights_expand_all"
+							]
+						},
+						"headcell_all_a": {
+							"model": "headcell_all_a",
+							"items": [
+								"rights_checkbox_all_a"
+							]
+						},
+						"headcell_all_e": {
+							"model": "headcell_all_e",
+							"items": [
+								"rights_checkbox_all_e"
+							]
+						},
+						"headcell_all_d": {
+							"model": "headcell_all_d",
+							"items": [
+								"rights_checkbox_all_d"
+							]
+						},
+						"headcell_all_s": {
+							"model": "headcell_all_s",
+							"items": [
+								"rights_checkbox_all_s"
+							]
+						},
+						"headcell_all_p": {
+							"model": "headcell_all_p",
+							"items": [
+								"rights_checkbox_all_p"
+							]
+						},
+						"headcell_all_i": {
+							"model": "headcell_all_i",
+							"items": [
+								"rights_checkbox_all_i"
+							]
+						},
+						"headcell_all_m": {
+							"model": "headcell_all_m",
+							"items": [
+								"rights_checkbox_all_m"
+							]
+						},
+						"cell_table": {
+							"model": "cell_table",
+							"items": [
+								"rights_checkbox_table",
+								"rights_table",
+								"rights_show_pages",
+								"rights_hide_pages",
+								"rights_group_expander"
+							]
+						},
+						"cell_a": {
+							"model": "cell_a",
+							"items": [
+								"rights_checkbox_a"
+							]
+						},
+						"cell_e": {
+							"model": "cell_e",
+							"items": [
+								"rights_checkbox_e"
+							]
+						},
+						"cell_d": {
+							"model": "cell_d",
+							"items": [
+								"rights_checkbox_d"
+							]
+						},
+						"cell_s": {
+							"model": "cell_s",
+							"items": [
+								"rights_checkbox_s"
+							]
+						},
+						"cell_p": {
+							"model": "cell_p",
+							"items": [
+								"rights_checkbox_p"
+							]
+						},
+						"cell_i": {
+							"model": "cell_i",
+							"items": [
+								"rights_checkbox_i"
+							]
+						},
+						"cell_m": {
+							"model": "cell_m",
+							"items": [
+								"rights_checkbox_m"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				}
+			},
+			"items": {
+				"rights_save": {
+					"type": "rights_save"
+				},
+				"rights_reset": {
+					"type": "rights_reset"
+				},
+				"rights_add_group": {
+					"type": "rights_add_group"
+				},
+				"rights_del_group": {
+					"type": "rights_del_group"
+				},
+				"rights_rename_group": {
+					"type": "rights_rename_group"
+				},
+				"rights_copy_permissions": {
+					"type": "rights_copy_permissions"
+				},
+				"rights_displaying_tables": {
+					"type": "rights_displaying_tables"
+				},
+				"rights_ordering_tables": {
+					"type": "rights_ordering_tables"
+				},
+				"rights_search": {
+					"type": "rights_search"
+				},
+				"rights_name_a": {
+					"type": "rights_name_a"
+				},
+				"rights_name_e": {
+					"type": "rights_name_e"
+				},
+				"rights_name_d": {
+					"type": "rights_name_d"
+				},
+				"rights_name_s": {
+					"type": "rights_name_s"
+				},
+				"rights_name_p": {
+					"type": "rights_name_p"
+				},
+				"rights_name_i": {
+					"type": "rights_name_i"
+				},
+				"rights_name_m": {
+					"type": "rights_name_m"
+				},
+				"rights_name_m1": {
+					"type": "rights_name_m1"
+				},
+				"rights_checkbox_all_a": {
+					"type": "rights_checkbox_all_a"
+				},
+				"rights_checkbox_all_e": {
+					"type": "rights_checkbox_all_e"
+				},
+				"rights_checkbox_all_d": {
+					"type": "rights_checkbox_all_d"
+				},
+				"rights_checkbox_all_s": {
+					"type": "rights_checkbox_all_s"
+				},
+				"rights_checkbox_all_p": {
+					"type": "rights_checkbox_all_p"
+				},
+				"rights_checkbox_all_i": {
+					"type": "rights_checkbox_all_i"
+				},
+				"rights_checkbox_all_m": {
+					"type": "rights_checkbox_all_m"
+				},
+				"rights_checkbox_table": {
+					"type": "rights_checkbox_table"
+				},
+				"rights_table": {
+					"type": "rights_table"
+				},
+				"rights_checkbox_a": {
+					"type": "rights_checkbox_a"
+				},
+				"rights_checkbox_e": {
+					"type": "rights_checkbox_e"
+				},
+				"rights_checkbox_d": {
+					"type": "rights_checkbox_d"
+				},
+				"rights_checkbox_s": {
+					"type": "rights_checkbox_s"
+				},
+				"rights_checkbox_p": {
+					"type": "rights_checkbox_p"
+				},
+				"rights_checkbox_i": {
+					"type": "rights_checkbox_i"
+				},
+				"rights_checkbox_m": {
+					"type": "rights_checkbox_m"
+				},
+				"rights_page": {
+					"type": "rights_page"
+				},
+				"rights_checkbox_page_a": {
+					"type": "rights_checkbox_page_a"
+				},
+				"rights_checkbox_page_e": {
+					"type": "rights_checkbox_page_e"
+				},
+				"rights_checkbox_page_d": {
+					"type": "rights_checkbox_page_d"
+				},
+				"rights_checkbox_page_s": {
+					"type": "rights_checkbox_page_s"
+				},
+				"rights_checkbox_page_p": {
+					"type": "rights_checkbox_page_p"
+				},
+				"rights_checkbox_page_i": {
+					"type": "rights_checkbox_page_i"
+				},
+				"rights_show_pages": {
+					"type": "rights_show_pages"
+				},
+				"rights_hide_pages": {
+					"type": "rights_hide_pages"
+				},
+				"rights_checkbox_page": {
+					"type": "rights_checkbox_page"
+				},
+				"rights_group_expander": {
+					"type": "rights_group_expander"
+				},
+				"rights_expand_all": {
+					"type": "rights_expand_all"
+				},
+				"logo": {
+					"type": "logo"
+				},
+				"menu": {
+					"type": "menu"
+				},
+				"username_button": {
+					"type": "username_button",
+					"items": [
+						"logout_link",
+						"exit_adminarea_link"
+					]
+				},
+				"exit_adminarea_link": {
+					"type": "exit_adminarea_link"
+				},
+				"logout_link": {
+					"type": "logout_link"
+				}
+			},
+			"dbProps": {},
+			"version": 13,
+			"imageItem": {
+				"type": "page_image"
+			},
+			"imageBgColor": "#f2f2f2",
+			"controlsBgColor": "white",
+			"imagePosition": "right",
+			"listTotals": 1,
+			"title": {}
+		},
+		{
+			"id": "admin_admembers_list",
+			"type": "admin_admembers_list",
+			"layoutId": "topbar",
+			"disabled": false,
+			"default": 0,
+			"forms": {
+				"above-grid": {
+					"modelId": "admin-admembers-above-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"simple_search",
+								"admembers_add"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"below-grid": {
+					"modelId": "list-below-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"pagination"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"top": {
+					"modelId": "admin-header",
+					"grid": [],
+					"cells": {},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"grid": {
+					"modelId": "admin-admembers-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "hcell_addLink"
+								},
+								{
+									"cell": "hcell_cb"
+								},
+								{
+									"cell": "hcell_un"
+								},
+								{
+									"cell": "hcell_dn"
+								},
+								{
+									"cell": "hcell_category"
+								},
+								{
+									"cell": "hcell_email"
+								}
+							],
+							"section": "head"
+						},
+						{
+							"cells": [
+								{
+									"cell": "cell_addLink"
+								},
+								{
+									"cell": "cell_cb"
+								},
+								{
+									"cell": "cell_un"
+								},
+								{
+									"cell": "cell_dn"
+								},
+								{
+									"cell": "cell_category"
+								},
+								{
+									"cell": "cell_email"
+								}
+							],
+							"section": "body"
+						}
+					],
+					"cells": {
+						"hcell_addLink": {
+							"model": "hcell_addLink",
+							"items": []
+						},
+						"hcell_cb": {
+							"model": "hcell_cb",
+							"items": [
+								"admembers_header_checkbox"
+							]
+						},
+						"hcell_un": {
+							"model": "hcell_un",
+							"items": [
+								"admembers_username_label"
+							]
+						},
+						"hcell_dn": {
+							"model": "hcell_dn",
+							"items": [
+								"admembers_displayname_label"
+							]
+						},
+						"hcell_category": {
+							"model": "hcell_category",
+							"items": [
+								"admembers_category_label"
+							]
+						},
+						"hcell_email": {
+							"model": "hcell_email",
+							"items": [
+								"admembers_email_label"
+							]
+						},
+						"cell_addLink": {
+							"model": "cell_addLink",
+							"items": [
+								"admembers_addlink"
+							]
+						},
+						"cell_cb": {
+							"model": "cell_cb",
+							"items": [
+								"admembers_checkbox"
+							]
+						},
+						"cell_un": {
+							"model": "cell_un",
+							"items": [
+								"admembers_username"
+							]
+						},
+						"cell_dn": {
+							"model": "cell_dn",
+							"items": [
+								"admembers_displayname"
+							]
+						},
+						"cell_category": {
+							"model": "cell_category",
+							"items": [
+								"admembers_category"
+							]
+						},
+						"cell_email": {
+							"model": "cell_email",
+							"items": [
+								"admembers_email"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				}
+			},
+			"items": {
+				"admembers_header_checkbox": {
+					"type": "admembers_header_checkbox"
+				},
+				"admembers_username_label": {
+					"type": "admembers_username_label"
+				},
+				"admembers_displayname_label": {
+					"type": "admembers_displayname_label"
+				},
+				"admembers_category_label": {
+					"type": "admembers_category_label"
+				},
+				"admembers_email_label": {
+					"type": "admembers_email_label"
+				},
+				"admembers_addlink": {
+					"type": "admembers_addlink"
+				},
+				"admembers_checkbox": {
+					"type": "admembers_checkbox"
+				},
+				"admembers_username": {
+					"type": "admembers_username"
+				},
+				"admembers_displayname": {
+					"type": "admembers_displayname"
+				},
+				"admembers_category": {
+					"type": "admembers_category"
+				},
+				"admembers_email": {
+					"type": "admembers_email"
+				},
+				"admembers_add": {
+					"type": "admembers_add"
+				},
+				"simple_search": {
+					"type": "simple_search"
+				},
+				"pagination": {
+					"type": "pagination"
+				}
+			},
+			"dbProps": {},
+			"version": 13,
+			"imageItem": {
+				"type": "page_image"
+			},
+			"imageBgColor": "#f2f2f2",
+			"controlsBgColor": "white",
+			"imagePosition": "right",
+			"listTotals": 1,
+			"title": {}
+		}
+	],
+	"projectStyle": {
+		"theme": "cerulean",
+		"size": "small",
+		"sidebarColor": "light",
+		"sidebarTheme": "info",
+		"topbarTheme": "teal",
+		"logoTheme": "success",
+		"fixedTopbar": true,
+		"topbarGradient": true,
+		"sidebarCustomThemeColor": "legacy",
+		"topbarCustomThemeColor": "legacy",
+		"logoCustomThemeColor": "legacy",
+		"customCss": "* {\r\n    font-family: Tahoma;\r\n}",
+		"panelLikeGrid": true,
+		"condensedGrid": true,
+		"rolloverHighlight": true,
+		"gpHeaderBg": "legacy",
+		"gpHeaderColor": "legacy",
+		"gpFooterBg": "legacy",
+		"gpPanelBorder": "legacy",
+		"gpBorderColor": "legacy",
+		"gpInnerBorder": "legacy",
+		"gpInnerBorderColor": "legacy",
+		"gcOddBg": "legacy",
+		"gcOddColor": "legacy",
+		"gcEvenBg": "legacy",
+		"gcEvenColor": "legacy",
+		"gcRolloverHighlightBg": "legacy",
+		"gcRolloverHighlightColor": "legacy"
+	},
+	"settingsTable": {
+		"connId": "conn",
+		"table": "dbo.OneForm2_settings"
+	},
+	"messages": {},
+	"projectLogo": {
+		"Farsi": "1Form"
+	},
+	"cookieBannerText": {
+		"Farsi": "این وب سایت از کوکی برای بهبود تجربه کاربر استفاده میکند"
+	}
+}

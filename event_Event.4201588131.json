@@ -1,0 +1,7 @@
+{
+	"type": "EVENT_FIELD",
+	"name": "Event",
+	"serverCode": "string id = parameters[\"id\"].ToString();\r\n\r\nresult[\"Fields_Desc\"] = tDAL.DBLookup(\r\n    \"SELECT Fields_Desc FROM OneForm_Fields WHERE ID = '\" + id.Replace(\"'\", \"''\") + \"'\"\r\n);",
+	"beforeJsCode": "params[\"id\"] = this.getValue();\r\nif (!params[\"id\"])\r\n    return false;",
+	"afterJsCode": "var description = result[\"Fields_Desc\"] &&\r\n                  result[\"Fields_Desc\"][\"Fields_Desc\"]\r\n    ? result[\"Fields_Desc\"][\"Fields_Desc\"]\r\n    : \"بدون شرح\";\r\n\r\n$(\"#field_id_info\").remove();\r\n\r\n$(\"#value_Field_ID_27\").closest(\".r-integrated-field\").after(\r\n    $(\"<div>\", {\r\n        id: \"field_id_info\",\r\n        class: \"form-group\",\r\n        css: {\r\n            \"margin-top\": \"6px\",\r\n            \"color\": \"blue\",\r\n            \"font-weight\": \"bold\",\r\n            \"whiteSpace\": \"pre-line\"\r\n        },\r\n        text: description\r\n    })\r\n);"
+}

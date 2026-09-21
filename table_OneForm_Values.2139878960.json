@@ -1,0 +1,2991 @@
+{
+	"orderInfo": [
+		{
+			"index": 1,
+			"field": "ID",
+			"expr": "ID",
+			"asc": false
+		}
+	],
+	"sql": "SELECT\n\tID,\n\tBranch,\n\tGroup_ID,\n\tField_ID,\n\tNumber_Value,\n\tShortText_Value,\n\tLongText_Value,\n\tCheck_Value,\n\tFile_Value,\n\tRecordDate,\n\tRecordUser\nFROM\n\tdbo.OneForm_Values\nORDER BY\n\tID DESC\n",
+	"connId": "conn",
+	"originalTable": "dbo.OneForm_Values",
+	"name": "dbo.OneForm_Values",
+	"shortTableName": "OneForm_Values",
+	"dbType": 2,
+	"tableOwnerIdField": "RecordUser",
+	"advancedSecurityType": 2,
+	"pageSizeRecords": 10,
+	"pageSizeSelectorRecords": [
+		"10",
+		"20",
+		"30",
+		"50",
+		"100",
+		"150",
+		"500",
+		"all"
+	],
+	"keyFields": [
+		"ID"
+	],
+	"masterTables": [
+		{
+			"table": 2043860093,
+			"masterKeys": [
+				"Code"
+			],
+			"detailsKeys": [
+				"Branch"
+			]
+		},
+		{
+			"table": 1003051358,
+			"masterKeys": [
+				"ID"
+			],
+			"detailsKeys": [
+				"Field_ID"
+			]
+		},
+		{
+			"table": 2511791386,
+			"masterKeys": [
+				"ID"
+			],
+			"detailsKeys": [
+				"Group_ID"
+			]
+		}
+	],
+	"detailsBadgeColor": "cd853f",
+	"fields": [
+		{
+			"name": "ID",
+			"sqlExpression": "ID",
+			"index": 1,
+			"strField": "ID",
+			"type": 3,
+			"autoinc": true,
+			"viewFormats": [
+				{}
+			],
+			"editFormats": [
+				{}
+			],
+			"label": {
+				"English": "شناسه",
+				"Farsi": "شناسه"
+			},
+			"tableName": "dbo.OneForm_Values"
+		},
+		{
+			"name": "Branch",
+			"sqlExpression": "Branch",
+			"index": 2,
+			"strField": "Branch",
+			"type": 2,
+			"viewFormats": [
+				{}
+			],
+			"editFormats": [
+				{
+					"format": "Lookup wizard",
+					"required": true,
+					"lookupType": 2,
+					"lookupTable": "dbo.Branches",
+					"lookupTableConnection": "conn",
+					"lookupLinkField": "Code",
+					"lookupDisplayField": "CAST([Code] AS NVARCHAR(4)) + '-' + BrName",
+					"lookupCustomDisplay": true,
+					"lookupOrderBy": "Code"
+				}
+			],
+			"filterFormat": {
+				"format": "Values list"
+			},
+			"label": {
+				"English": "شعبه",
+				"Farsi": "شعبه"
+			},
+			"tableName": "dbo.OneForm_Values"
+		},
+		{
+			"name": "Field_ID",
+			"sqlExpression": "Field_ID",
+			"index": 4,
+			"strField": "Field_ID",
+			"type": 2,
+			"viewFormats": [
+				{}
+			],
+			"editFormats": [
+				{
+					"format": "Lookup wizard",
+					"lookupType": 2,
+					"lookupTable": "dbo.OneForm_Fields",
+					"lookupTableConnection": "conn",
+					"lookupLinkField": "ID",
+					"lookupDisplayField": "CAST([ID] as NVARCHAR(5)) + '-' +FieldTitle",
+					"lookupCustomDisplay": true,
+					"lookupOrderBy": "ID",
+					"lookupDependent": true,
+					"lookupDependentFields": [
+						{
+							"masterField": "Group_ID",
+							"lookupField": "Group_ID"
+						}
+					],
+					"fieldEvents": [
+						{
+							"event": "change",
+							"handlerId": 4201588131
+						}
+					]
+				}
+			],
+			"label": {
+				"English": "عنوان",
+				"Farsi": "عنوان"
+			},
+			"tableName": "dbo.OneForm_Values"
+		},
+		{
+			"name": "ShortText_Value",
+			"sqlExpression": "ShortText_Value",
+			"index": 6,
+			"strField": "ShortText_Value",
+			"type": 202,
+			"viewFormats": [
+				{}
+			],
+			"editFormats": [
+				{}
+			],
+			"label": {
+				"English": "متن کوتاه",
+				"Farsi": "متن کوتاه 50"
+			},
+			"tableName": "dbo.OneForm_Values"
+		},
+		{
+			"name": "LongText_Value",
+			"sqlExpression": "LongText_Value",
+			"index": 7,
+			"strField": "LongText_Value",
+			"type": 202,
+			"viewFormats": [
+				{}
+			],
+			"editFormats": [
+				{
+					"format": "Text area"
+				}
+			],
+			"label": {
+				"English": "متن بلند",
+				"Farsi": "متن بلند"
+			},
+			"tableName": "dbo.OneForm_Values"
+		},
+		{
+			"name": "Check_Value",
+			"sqlExpression": "Check_Value",
+			"index": 8,
+			"strField": "Check_Value",
+			"type": 11,
+			"viewFormats": [
+				{
+					"format": "Checkbox"
+				}
+			],
+			"editFormats": [
+				{
+					"format": "Checkbox"
+				}
+			],
+			"label": {
+				"English": "چک باکس",
+				"Farsi": "چک باکس"
+			},
+			"tableName": "dbo.OneForm_Values"
+		},
+		{
+			"name": "File_Value",
+			"sqlExpression": "File_Value",
+			"index": 9,
+			"strField": "File_Value",
+			"googleLikeSearch": false,
+			"type": 204,
+			"viewFormats": [
+				{
+					"format": "Database Image",
+					"imageCaptions": 1
+				}
+			],
+			"editFormats": [
+				{
+					"format": "Database image"
+				}
+			],
+			"label": {
+				"English": "فایل",
+				"Farsi": "تصویر"
+			},
+			"tableName": "dbo.OneForm_Values"
+		},
+		{
+			"name": "Group_ID",
+			"sqlExpression": "Group_ID",
+			"index": 3,
+			"strField": "Group_ID",
+			"type": 2,
+			"viewFormats": [
+				{}
+			],
+			"editFormats": [
+				{
+					"format": "Lookup wizard",
+					"required": true,
+					"lookupType": 2,
+					"lookupTable": "dbo.OneForm_Fields_Groups",
+					"lookupTableConnection": "conn",
+					"lookupLinkField": "ID",
+					"lookupDisplayField": "CAST([ID] as NVARCHAR(5)) + '-' +Group_Name",
+					"lookupCustomDisplay": true,
+					"lookupOrderBy": "ID"
+				}
+			],
+			"label": {
+				"Farsi": "گروه سوال"
+			},
+			"tableName": "dbo.OneForm_Values"
+		},
+		{
+			"name": "Number_Value",
+			"sqlExpression": "Number_Value",
+			"index": 5,
+			"strField": "Number_Value",
+			"type": 202,
+			"viewFormats": [
+				{}
+			],
+			"editFormats": [
+				{
+					"validateAs": "Number",
+					"textHTML5Input": "Number"
+				}
+			],
+			"label": {
+				"Farsi": "مقدار عددی"
+			},
+			"tableName": "dbo.OneForm_Values"
+		},
+		{
+			"name": "RecordDate",
+			"sqlExpression": "RecordDate",
+			"index": 10,
+			"strField": "RecordDate",
+			"type": 135,
+			"viewFormats": [
+				{
+					"format": "Custom",
+					"customExpression": "if (value == null || value == DBNull.Value)\r\n    return \"\";\r\n\r\nDateTime date;\r\n\r\nif (value is DateTime)\r\n{\r\n    date = (DateTime)value;\r\n}\r\nelse if (!DateTime.TryParse(value.ToString(), out date))\r\n{\r\n    return \"\";\r\n}\r\n\r\nSystem.Globalization.PersianCalendar pc =\r\n    new System.Globalization.PersianCalendar();\r\n\r\nreturn String.Format(\"{0:0000}/{1:00}/{2:00}\",\r\n    pc.GetYear(date),\r\n    pc.GetMonth(date),\r\n    pc.GetDayOfMonth(date));"
+				}
+			],
+			"editFormats": [
+				{
+					"format": "Date",
+					"dateEditType": 11
+				}
+			],
+			"label": {
+				"Farsi": "تاریخ ثبت"
+			},
+			"tableName": "dbo.OneForm_Values"
+		},
+		{
+			"name": "RecordUser",
+			"sqlExpression": "RecordUser",
+			"index": 11,
+			"strField": "RecordUser",
+			"type": 202,
+			"viewFormats": [
+				{}
+			],
+			"editFormats": [
+				{}
+			],
+			"label": {
+				"Farsi": "کاربر ثبت کننده"
+			},
+			"tableName": "dbo.OneForm_Values"
+		}
+	],
+	"warnLeavingEdit": true,
+	"resizeColumns": true,
+	"dbTableInfo": {
+		"type": 0,
+		"foreignKeys": [],
+		"fields": [
+			{
+				"name": "ID",
+				"type": 3,
+				"size": 10,
+				"scale": 0,
+				"typeName": "int",
+				"nullable": false,
+				"autoinc": true,
+				"defaultValueSQL": "",
+				"defaultValue": ""
+			},
+			{
+				"name": "Branch",
+				"type": 2,
+				"size": 5,
+				"scale": 0,
+				"typeName": "smallint",
+				"nullable": false,
+				"autoinc": false,
+				"defaultValueSQL": "",
+				"defaultValue": ""
+			},
+			{
+				"name": "Group_ID",
+				"type": 2,
+				"size": 5,
+				"scale": 0,
+				"typeName": "smallint",
+				"nullable": false,
+				"autoinc": false,
+				"defaultValueSQL": "",
+				"defaultValue": ""
+			},
+			{
+				"name": "Field_ID",
+				"type": 2,
+				"size": 5,
+				"scale": 0,
+				"typeName": "smallint",
+				"nullable": false,
+				"autoinc": false,
+				"defaultValueSQL": "",
+				"defaultValue": ""
+			},
+			{
+				"name": "Number_Value",
+				"type": 202,
+				"size": 100,
+				"scale": null,
+				"typeName": "nvarchar",
+				"nullable": true,
+				"autoinc": false,
+				"defaultValueSQL": "",
+				"defaultValue": ""
+			},
+			{
+				"name": "ShortText_Value",
+				"type": 202,
+				"size": 200,
+				"scale": null,
+				"typeName": "nvarchar",
+				"nullable": true,
+				"autoinc": false,
+				"defaultValueSQL": "",
+				"defaultValue": ""
+			},
+			{
+				"name": "LongText_Value",
+				"type": 202,
+				"size": 2147483646,
+				"scale": null,
+				"typeName": "nvarchar",
+				"nullable": true,
+				"autoinc": false,
+				"defaultValueSQL": "",
+				"defaultValue": ""
+			},
+			{
+				"name": "Check_Value",
+				"type": 11,
+				"size": 1,
+				"scale": null,
+				"typeName": "bit",
+				"nullable": true,
+				"autoinc": false,
+				"defaultValueSQL": "",
+				"defaultValue": ""
+			},
+			{
+				"name": "File_Value",
+				"type": 205,
+				"size": 2147483647,
+				"scale": null,
+				"typeName": "image",
+				"nullable": true,
+				"autoinc": false,
+				"defaultValueSQL": "",
+				"defaultValue": ""
+			},
+			{
+				"name": "RecordDate",
+				"type": 135,
+				"size": 16,
+				"scale": 3,
+				"typeName": "datetime",
+				"nullable": false,
+				"autoinc": false,
+				"defaultValueSQL": "getdate()",
+				"defaultValue": "CURRENT_TIMESTAMP"
+			},
+			{
+				"name": "RecordUser",
+				"type": 202,
+				"size": 100,
+				"scale": null,
+				"typeName": "nvarchar",
+				"nullable": false,
+				"autoinc": false,
+				"defaultValueSQL": "",
+				"defaultValue": ""
+			}
+		],
+		"primaryKeys": [
+			"ID"
+		],
+		"uniqueFields": [],
+		"name": "OneForm_Values",
+		"schema": "dbo"
+	},
+	"sortByFields": {
+		"sortOrder": [
+			{
+				"fields": [
+					{
+						"field": "ID",
+						"desc": false
+					}
+				],
+				"label": {
+					"field": "ID",
+					"table": "dbo.OneForm_Values",
+					"type": 3
+				}
+			},
+			{
+				"fields": [
+					{
+						"field": "Branch",
+						"desc": false
+					}
+				],
+				"label": {
+					"field": "Branch",
+					"table": "dbo.OneForm_Values",
+					"type": 3
+				}
+			},
+			{
+				"fields": [
+					{
+						"field": "Field_ID",
+						"desc": false
+					}
+				],
+				"label": {
+					"field": "Field_ID",
+					"table": "dbo.OneForm_Values",
+					"type": 3
+				}
+			},
+			{
+				"fields": [
+					{
+						"field": "ShortText_Value",
+						"desc": false
+					}
+				],
+				"label": {
+					"field": "ShortText_Value",
+					"table": "dbo.OneForm_Values",
+					"type": 3
+				}
+			},
+			{
+				"fields": [
+					{
+						"field": "LongText_Value",
+						"desc": false
+					}
+				],
+				"label": {
+					"field": "LongText_Value",
+					"table": "dbo.OneForm_Values",
+					"type": 3
+				}
+			},
+			{
+				"fields": [
+					{
+						"field": "Check_Value",
+						"desc": false
+					}
+				],
+				"label": {
+					"field": "Check_Value",
+					"table": "dbo.OneForm_Values",
+					"type": 3
+				}
+			},
+			{
+				"fields": [
+					{
+						"field": "Group_ID",
+						"desc": false
+					}
+				],
+				"label": {
+					"field": "Group_ID",
+					"table": "dbo.OneForm_Values",
+					"type": 3
+				}
+			}
+		]
+	},
+	"pages": [
+		{
+			"id": "add",
+			"type": "add",
+			"layoutId": "nomenu",
+			"disabled": false,
+			"default": 0,
+			"forms": {
+				"above-grid": {
+					"modelId": "add-above-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"add_message"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"below-grid": {
+					"modelId": "add-below-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"add_save",
+								"add_reset",
+								"add_back_list",
+								"add_cancel"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"top": {
+					"modelId": "add-header",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"add_header"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"grid": {
+					"modelId": "simple-edit",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c3"
+								},
+								{
+									"cell": "c"
+								},
+								{
+									"cell": "c4"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c3": {
+							"model": "c3",
+							"items": [
+								"integrated_edit_field",
+								"integrated_edit_field6",
+								"Field_ID"
+							]
+						},
+						"c": {
+							"model": "c3",
+							"items": [
+								"integrated_edit_field7",
+								"integrated_edit_field2",
+								"integrated_edit_field4"
+							]
+						},
+						"c4": {
+							"model": "c3",
+							"items": [
+								"integrated_edit_field3",
+								"integrated_edit_field5"
+							]
+						}
+					},
+					"deferredItems": [],
+					"columnCount": 3,
+					"inlineLabels": false,
+					"separateLabels": false
+				}
+			},
+			"items": {
+				"add_header": {
+					"type": "add_header"
+				},
+				"add_back_list": {
+					"type": "add_back_list"
+				},
+				"add_cancel": {
+					"type": "add_cancel"
+				},
+				"add_message": {
+					"type": "add_message"
+				},
+				"add_save": {
+					"type": "add_save"
+				},
+				"add_reset": {
+					"type": "add_reset"
+				},
+				"integrated_edit_field": {
+					"field": "Branch",
+					"type": "integrated_edit_field",
+					"orientation": 0
+				},
+				"integrated_edit_field6": {
+					"field": "Group_ID",
+					"type": "integrated_edit_field",
+					"orientation": 0
+				},
+				"integrated_edit_field7": {
+					"field": "Number_Value",
+					"type": "integrated_edit_field",
+					"orientation": 0
+				},
+				"integrated_edit_field2": {
+					"field": "ShortText_Value",
+					"type": "integrated_edit_field",
+					"orientation": 0
+				},
+				"integrated_edit_field3": {
+					"field": "LongText_Value",
+					"type": "integrated_edit_field",
+					"orientation": 0
+				},
+				"integrated_edit_field4": {
+					"field": "Check_Value",
+					"type": "integrated_edit_field",
+					"orientation": 0
+				},
+				"integrated_edit_field5": {
+					"field": "File_Value",
+					"type": "integrated_edit_field",
+					"orientation": 0
+				},
+				"Field_ID": {
+					"field": "Field_ID",
+					"type": "integrated_edit_field",
+					"orientation": 0
+				}
+			},
+			"dbProps": {},
+			"version": 13,
+			"imageItem": {
+				"type": "page_image"
+			},
+			"imageBgColor": "#f2f2f2",
+			"controlsBgColor": "white",
+			"imagePosition": "right",
+			"listTotals": 1,
+			"title": {}
+		},
+		{
+			"id": "export",
+			"type": "export",
+			"layoutId": "first",
+			"disabled": false,
+			"default": 0,
+			"forms": {
+				"supertop": {
+					"modelId": "panel-top",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": []
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"top": {
+					"modelId": "export-header",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"export_header"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"grid": {
+					"modelId": "export-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"export_field",
+								"export_field1",
+								"export_field2",
+								"export_field3",
+								"export_field4",
+								"export_field5",
+								"export_field6",
+								"export_field7",
+								"export_field8",
+								"export_field9"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"footer": {
+					"modelId": "export-footer",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								},
+								{
+									"cell": "c2"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": []
+						},
+						"c2": {
+							"model": "c2",
+							"items": [
+								"export_export",
+								"export_cancel"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				}
+			},
+			"items": {
+				"export_header": {
+					"type": "export_header"
+				},
+				"export_export": {
+					"type": "export_export"
+				},
+				"export_cancel": {
+					"type": "export_cancel"
+				},
+				"export_field": {
+					"field": "ID",
+					"type": "export_field"
+				},
+				"export_field1": {
+					"field": "Branch",
+					"type": "export_field"
+				},
+				"export_field2": {
+					"field": "Field_ID",
+					"type": "export_field"
+				},
+				"export_field3": {
+					"field": "ShortText_Value",
+					"type": "export_field"
+				},
+				"export_field4": {
+					"field": "LongText_Value",
+					"type": "export_field"
+				},
+				"export_field5": {
+					"field": "Check_Value",
+					"type": "export_field"
+				},
+				"export_field6": {
+					"field": "Group_ID",
+					"type": "export_field"
+				},
+				"export_field7": {
+					"field": "Number_Value",
+					"type": "export_field"
+				},
+				"export_field8": {
+					"field": "RecordDate",
+					"type": "export_field"
+				},
+				"export_field9": {
+					"field": "RecordUser",
+					"type": "export_field"
+				}
+			},
+			"dbProps": {},
+			"version": 13,
+			"imageItem": {
+				"type": "page_image"
+			},
+			"imageBgColor": "#f2f2f2",
+			"controlsBgColor": "white",
+			"imagePosition": "right",
+			"listTotals": 1,
+			"title": {},
+			"exportFormat": 2,
+			"exportDelimiter": ",",
+			"exportSelectDelimiter": true,
+			"exportSelectFields": true
+		},
+		{
+			"id": "import",
+			"type": "import",
+			"layoutId": "first",
+			"disabled": false,
+			"default": 0,
+			"forms": {
+				"supertop": {
+					"modelId": "panel-top",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": []
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"top": {
+					"modelId": "import-header",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"import_header"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"grid": {
+					"modelId": "import-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"import_field1",
+								"import_field2",
+								"import_field3",
+								"import_field4",
+								"import_field5",
+								"import_field6",
+								"import_field7",
+								"import_field9"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				}
+			},
+			"items": {
+				"import_header": {
+					"type": "import_header"
+				},
+				"import_field1": {
+					"field": "Branch",
+					"type": "import_field"
+				},
+				"import_field2": {
+					"field": "Field_ID",
+					"type": "import_field"
+				},
+				"import_field3": {
+					"field": "ShortText_Value",
+					"type": "import_field"
+				},
+				"import_field4": {
+					"field": "LongText_Value",
+					"type": "import_field"
+				},
+				"import_field5": {
+					"field": "Check_Value",
+					"type": "import_field"
+				},
+				"import_field6": {
+					"field": "Group_ID",
+					"type": "import_field"
+				},
+				"import_field7": {
+					"field": "Number_Value",
+					"type": "import_field"
+				},
+				"import_field9": {
+					"field": "RecordUser",
+					"type": "import_field"
+				}
+			},
+			"dbProps": {},
+			"version": 13,
+			"imageItem": {
+				"type": "page_image"
+			},
+			"imageBgColor": "#f2f2f2",
+			"controlsBgColor": "white",
+			"imagePosition": "right",
+			"listTotals": 1,
+			"title": {}
+		},
+		{
+			"id": "edit",
+			"type": "edit",
+			"layoutId": "nomenu",
+			"disabled": false,
+			"default": 0,
+			"forms": {
+				"above-grid": {
+					"modelId": "edit-above-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"edit_message"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"below-grid": {
+					"modelId": "edit-below-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								},
+								{
+									"cell": "c2"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"edit_save",
+								"update_records",
+								"edit_back_list",
+								"edit_close"
+							]
+						},
+						"c2": {
+							"model": "c2",
+							"items": [
+								"prev",
+								"next",
+								"hamburger"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"top": {
+					"modelId": "edit-header",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"edit_header"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"grid": {
+					"modelId": "simple-edit",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c3"
+								},
+								{
+									"cell": "c"
+								},
+								{
+									"cell": "c4"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c3": {
+							"model": "c3",
+							"items": [
+								"integrated_edit_field",
+								"integrated_edit_field6",
+								"integrated_edit_field1"
+							]
+						},
+						"c": {
+							"model": "c3",
+							"items": [
+								"integrated_edit_field7",
+								"integrated_edit_field2",
+								"integrated_edit_field4"
+							]
+						},
+						"c4": {
+							"model": "c3",
+							"items": [
+								"integrated_edit_field3",
+								"integrated_edit_field5"
+							]
+						}
+					},
+					"deferredItems": [],
+					"columnCount": 3,
+					"inlineLabels": false,
+					"separateLabels": false
+				}
+			},
+			"items": {
+				"edit_header": {
+					"type": "edit_header"
+				},
+				"hamburger": {
+					"type": "hamburger",
+					"items": [
+						"edit_reset",
+						"edit_view"
+					]
+				},
+				"edit_reset": {
+					"type": "edit_reset"
+				},
+				"edit_message": {
+					"type": "edit_message"
+				},
+				"edit_save": {
+					"type": "edit_save"
+				},
+				"edit_back_list": {
+					"type": "edit_back_list"
+				},
+				"edit_close": {
+					"type": "edit_close"
+				},
+				"edit_view": {
+					"type": "edit_view"
+				},
+				"next": {
+					"type": "next"
+				},
+				"prev": {
+					"type": "prev"
+				},
+				"update_records": {
+					"type": "update_records"
+				},
+				"integrated_edit_field": {
+					"field": "Branch",
+					"type": "integrated_edit_field",
+					"updateOnEdit": false,
+					"orientation": 0
+				},
+				"integrated_edit_field1": {
+					"field": "Field_ID",
+					"type": "integrated_edit_field",
+					"updateOnEdit": true,
+					"orientation": 0
+				},
+				"integrated_edit_field6": {
+					"field": "Group_ID",
+					"type": "integrated_edit_field",
+					"updateOnEdit": true,
+					"orientation": 0
+				},
+				"integrated_edit_field7": {
+					"field": "Number_Value",
+					"type": "integrated_edit_field",
+					"updateOnEdit": true,
+					"orientation": 0
+				},
+				"integrated_edit_field2": {
+					"field": "ShortText_Value",
+					"type": "integrated_edit_field",
+					"updateOnEdit": true,
+					"orientation": 0
+				},
+				"integrated_edit_field3": {
+					"field": "LongText_Value",
+					"type": "integrated_edit_field",
+					"updateOnEdit": true,
+					"orientation": 0
+				},
+				"integrated_edit_field4": {
+					"field": "Check_Value",
+					"type": "integrated_edit_field",
+					"updateOnEdit": true,
+					"orientation": 0
+				},
+				"integrated_edit_field5": {
+					"field": "File_Value",
+					"type": "integrated_edit_field",
+					"updateOnEdit": true,
+					"orientation": 0
+				}
+			},
+			"dbProps": {},
+			"version": 13,
+			"imageItem": {
+				"type": "page_image"
+			},
+			"imageBgColor": "#f2f2f2",
+			"controlsBgColor": "white",
+			"imagePosition": "right",
+			"listTotals": 1,
+			"title": {}
+		},
+		{
+			"id": "view",
+			"type": "view",
+			"layoutId": "nomenu",
+			"disabled": false,
+			"default": 0,
+			"forms": {
+				"above-grid": {
+					"modelId": "view-above-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1",
+									"colspan": 2
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": []
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"below-grid": {
+					"modelId": "view-below-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								},
+								{
+									"cell": "c2"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"view_back_list",
+								"view_close"
+							]
+						},
+						"c2": {
+							"model": "c2",
+							"items": [
+								"prev",
+								"next",
+								"hamburger"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"top": {
+					"modelId": "view-header",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"view_header"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"grid": {
+					"modelId": "simple-edit",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c3"
+								},
+								{
+									"cell": "c"
+								},
+								{
+									"cell": "c4"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c3": {
+							"model": "c3",
+							"items": [
+								"integrated_edit_field",
+								"integrated_edit_field1",
+								"integrated_edit_field7",
+								"integrated_edit_field2"
+							]
+						},
+						"c": {
+							"model": "c3",
+							"items": [
+								"integrated_edit_field8",
+								"integrated_edit_field3",
+								"integrated_edit_field5"
+							]
+						},
+						"c4": {
+							"model": "c3",
+							"items": [
+								"integrated_edit_field4",
+								"integrated_edit_field6",
+								"integrated_edit_field9",
+								"integrated_edit_field10"
+							]
+						}
+					},
+					"deferredItems": [],
+					"columnCount": 3,
+					"inlineLabels": false,
+					"separateLabels": false
+				}
+			},
+			"items": {
+				"view_header": {
+					"type": "view_header"
+				},
+				"view_back_list": {
+					"type": "view_back_list"
+				},
+				"view_close": {
+					"type": "view_close"
+				},
+				"hamburger": {
+					"type": "hamburger",
+					"items": [
+						"view_edit"
+					]
+				},
+				"view_edit": {
+					"type": "view_edit"
+				},
+				"next": {
+					"type": "next"
+				},
+				"prev": {
+					"type": "prev"
+				},
+				"integrated_edit_field": {
+					"field": "ID",
+					"type": "integrated_edit_field",
+					"orientation": 0
+				},
+				"integrated_edit_field1": {
+					"field": "Branch",
+					"type": "integrated_edit_field",
+					"orientation": 0
+				},
+				"integrated_edit_field2": {
+					"field": "Field_ID",
+					"type": "integrated_edit_field",
+					"orientation": 0
+				},
+				"integrated_edit_field3": {
+					"field": "ShortText_Value",
+					"type": "integrated_edit_field",
+					"orientation": 0
+				},
+				"integrated_edit_field4": {
+					"field": "LongText_Value",
+					"type": "integrated_edit_field",
+					"orientation": 0
+				},
+				"integrated_edit_field5": {
+					"field": "Check_Value",
+					"type": "integrated_edit_field",
+					"orientation": 0
+				},
+				"integrated_edit_field6": {
+					"field": "File_Value",
+					"type": "integrated_edit_field",
+					"orientation": 0
+				},
+				"integrated_edit_field7": {
+					"field": "Group_ID",
+					"type": "integrated_edit_field",
+					"orientation": 0
+				},
+				"integrated_edit_field8": {
+					"field": "Number_Value",
+					"type": "integrated_edit_field",
+					"orientation": 0
+				},
+				"integrated_edit_field9": {
+					"field": "RecordDate",
+					"type": "integrated_edit_field",
+					"orientation": 0
+				},
+				"integrated_edit_field10": {
+					"field": "RecordUser",
+					"type": "integrated_edit_field",
+					"orientation": 0
+				}
+			},
+			"dbProps": {},
+			"version": 13,
+			"imageItem": {
+				"type": "page_image"
+			},
+			"imageBgColor": "#f2f2f2",
+			"controlsBgColor": "white",
+			"imagePosition": "right",
+			"listTotals": 1,
+			"title": {}
+		},
+		{
+			"id": "list",
+			"type": "list",
+			"layoutId": "leftbar",
+			"disabled": false,
+			"default": 0,
+			"forms": {
+				"above-grid": {
+					"modelId": "list-above-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								},
+								{
+									"cell": "c2"
+								}
+							],
+							"section": ""
+						},
+						{
+							"cells": [
+								{
+									"cell": "c3"
+								},
+								{
+									"cell": "c4"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"add",
+								"delete",
+								"update_selected"
+							]
+						},
+						"c2": {
+							"model": "c2",
+							"items": [
+								"details_found",
+								"page_size",
+								"print_panel",
+								"columns_control"
+							]
+						},
+						"c3": {
+							"model": "c3",
+							"items": []
+						},
+						"c4": {
+							"model": "c4",
+							"items": [
+								"sort_dropdown"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"below-grid": {
+					"modelId": "list-below-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"pagination"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"left": {
+					"modelId": "leftbar-menu",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c0"
+								}
+							],
+							"section": ""
+						},
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c0": {
+							"model": "c0",
+							"items": [
+								"logo"
+							]
+						},
+						"c1": {
+							"model": "c1",
+							"items": [
+								"menu",
+								"search_panel",
+								"filter_panel"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"supertop": {
+					"modelId": "leftbar-top",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								},
+								{
+									"cell": "c2"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"expand_menu_button",
+								"collapse_button",
+								"breadcrumb"
+							]
+						},
+						"c2": {
+							"model": "c2",
+							"items": [
+								"simple_search_field",
+								"simple_search_option",
+								"simple_search",
+								"list_options",
+								"loginform_login",
+								"username_button"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"top": {
+					"modelId": "list-sidebar-top",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c2"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c2": {
+							"model": "c2",
+							"items": [
+								"master_info"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"grid": {
+					"modelId": "horizontal-grid",
+					"grid": [
+						{
+							"section": "head",
+							"cells": [
+								{
+									"cell": "headcell_icons"
+								},
+								{
+									"cell": "headcell_checkbox"
+								},
+								{
+									"cell": "headcell_field"
+								},
+								{
+									"cell": "headcell_field1"
+								},
+								{
+									"cell": "headcell_field2"
+								},
+								{
+									"cell": "headcell_field3"
+								},
+								{
+									"cell": "headcell_field4"
+								},
+								{
+									"cell": "headcell_field5"
+								},
+								{
+									"cell": "headcell_field6"
+								},
+								{
+									"cell": "headcell_field7"
+								},
+								{
+									"cell": "headcell_field8"
+								},
+								{
+									"cell": "headcell_field9"
+								},
+								{
+									"cell": "headcell_field10"
+								}
+							]
+						},
+						{
+							"section": "body",
+							"cells": [
+								{
+									"cell": "cell_icons"
+								},
+								{
+									"cell": "cell_checkbox"
+								},
+								{
+									"cell": "cell_field"
+								},
+								{
+									"cell": "cell_field1"
+								},
+								{
+									"cell": "cell_field2"
+								},
+								{
+									"cell": "cell_field3"
+								},
+								{
+									"cell": "cell_field4"
+								},
+								{
+									"cell": "cell_field5"
+								},
+								{
+									"cell": "cell_field6"
+								},
+								{
+									"cell": "cell_field7"
+								},
+								{
+									"cell": "cell_field8"
+								},
+								{
+									"cell": "cell_field9"
+								},
+								{
+									"cell": "cell_field10"
+								}
+							]
+						},
+						{
+							"section": "foot",
+							"cells": [
+								{
+									"cell": "footcell_icons"
+								},
+								{
+									"cell": "footcell_checkbox"
+								},
+								{
+									"cell": "footcell_field"
+								},
+								{
+									"cell": "footcell_field1"
+								},
+								{
+									"cell": "footcell_field2"
+								},
+								{
+									"cell": "footcell_field3"
+								},
+								{
+									"cell": "footcell_field4"
+								},
+								{
+									"cell": "footcell_field5"
+								},
+								{
+									"cell": "footcell_field6"
+								},
+								{
+									"cell": "footcell_field7"
+								},
+								{
+									"cell": "footcell_field8"
+								},
+								{
+									"cell": "footcell_field9"
+								},
+								{
+									"cell": "footcell_field10"
+								}
+							]
+						}
+					],
+					"cells": {
+						"headcell_field": {
+							"model": "headcell_field",
+							"items": [
+								"simple_grid_field8"
+							],
+							"field": "ID",
+							"columnName": "field"
+						},
+						"cell_field": {
+							"model": "cell_field",
+							"items": [
+								"simple_grid_field"
+							],
+							"field": "ID",
+							"columnName": "field"
+						},
+						"footcell_field": {
+							"model": "footcell_field",
+							"items": [],
+							"field": "ID",
+							"columnName": "field"
+						},
+						"headcell_field1": {
+							"model": "headcell_field",
+							"items": [
+								"simple_grid_field9"
+							],
+							"field": "Branch",
+							"columnName": "field"
+						},
+						"cell_field1": {
+							"model": "cell_field",
+							"items": [
+								"simple_grid_field1"
+							],
+							"field": "Branch",
+							"columnName": "field"
+						},
+						"footcell_field1": {
+							"model": "footcell_field",
+							"items": [],
+							"field": "Branch",
+							"columnName": "field"
+						},
+						"headcell_field2": {
+							"model": "headcell_field",
+							"items": [
+								"simple_grid_field10"
+							],
+							"field": "Group_ID",
+							"columnName": "field"
+						},
+						"cell_field2": {
+							"model": "cell_field",
+							"items": [
+								"simple_grid_field7"
+							],
+							"field": "Group_ID",
+							"columnName": "field"
+						},
+						"footcell_field2": {
+							"model": "footcell_field",
+							"items": [],
+							"field": "Group_ID",
+							"columnName": "field"
+						},
+						"headcell_field3": {
+							"model": "headcell_field",
+							"items": [
+								"simple_grid_field11"
+							],
+							"field": "Field_ID",
+							"columnName": "field"
+						},
+						"cell_field3": {
+							"model": "cell_field",
+							"items": [
+								"simple_grid_field2"
+							],
+							"field": "Field_ID",
+							"columnName": "field"
+						},
+						"footcell_field3": {
+							"model": "footcell_field",
+							"items": [],
+							"field": "Field_ID",
+							"columnName": "field"
+						},
+						"headcell_field4": {
+							"model": "headcell_field",
+							"items": [
+								"simple_grid_field12"
+							],
+							"field": "ShortText_Value",
+							"columnName": "field"
+						},
+						"cell_field4": {
+							"model": "cell_field",
+							"items": [
+								"simple_grid_field3"
+							],
+							"field": "ShortText_Value",
+							"columnName": "field"
+						},
+						"footcell_field4": {
+							"model": "footcell_field",
+							"items": [],
+							"field": "ShortText_Value",
+							"columnName": "field"
+						},
+						"headcell_field5": {
+							"model": "headcell_field",
+							"items": [
+								"simple_grid_field13"
+							],
+							"field": "LongText_Value",
+							"columnName": "field"
+						},
+						"cell_field5": {
+							"model": "cell_field",
+							"items": [
+								"simple_grid_field4"
+							],
+							"field": "LongText_Value",
+							"columnName": "field"
+						},
+						"footcell_field5": {
+							"model": "footcell_field",
+							"items": [],
+							"field": "LongText_Value",
+							"columnName": "field"
+						},
+						"headcell_field6": {
+							"model": "headcell_field",
+							"items": [
+								"simple_grid_field14"
+							],
+							"field": "Check_Value",
+							"columnName": "field"
+						},
+						"cell_field6": {
+							"model": "cell_field",
+							"items": [
+								"simple_grid_field5"
+							],
+							"field": "Check_Value",
+							"columnName": "field"
+						},
+						"footcell_field6": {
+							"model": "footcell_field",
+							"items": [],
+							"field": "Check_Value",
+							"columnName": "field"
+						},
+						"headcell_field7": {
+							"model": "headcell_field",
+							"items": [
+								"simple_grid_field15"
+							],
+							"field": "File_Value",
+							"columnName": "field"
+						},
+						"cell_field7": {
+							"model": "cell_field",
+							"items": [
+								"simple_grid_field6"
+							],
+							"field": "File_Value",
+							"columnName": "field"
+						},
+						"footcell_field7": {
+							"model": "footcell_field",
+							"items": [],
+							"field": "File_Value",
+							"columnName": "field"
+						},
+						"headcell_checkbox": {
+							"model": "headcell_checkbox",
+							"items": [
+								"grid_checkbox_head"
+							],
+							"columnName": "checkbox",
+							"field": ""
+						},
+						"cell_checkbox": {
+							"model": "cell_checkbox",
+							"items": [
+								"grid_checkbox"
+							],
+							"columnName": "checkbox",
+							"field": ""
+						},
+						"footcell_checkbox": {
+							"model": "footcell_checkbox",
+							"items": [],
+							"columnName": "checkbox",
+							"field": ""
+						},
+						"headcell_icons": {
+							"model": "headcell_icons",
+							"items": [],
+							"columnName": "list-icons",
+							"field": ""
+						},
+						"cell_icons": {
+							"model": "cell_icons",
+							"items": [
+								"grid_edit",
+								"grid_copy",
+								"grid_view"
+							],
+							"columnName": "list-icons",
+							"field": ""
+						},
+						"footcell_icons": {
+							"model": "footcell_icons",
+							"items": [],
+							"columnName": "list-icons",
+							"field": ""
+						},
+						"headcell_field8": {
+							"model": "headcell_field",
+							"items": [
+								"grid_field_label"
+							],
+							"field": "Number_Value",
+							"columnName": "field"
+						},
+						"cell_field8": {
+							"model": "cell_field",
+							"items": [
+								"grid_field"
+							],
+							"field": "Number_Value",
+							"columnName": "field"
+						},
+						"footcell_field8": {
+							"model": "footcell_field",
+							"items": [],
+							"field": "Number_Value",
+							"columnName": "field"
+						},
+						"headcell_field9": {
+							"model": "headcell_field",
+							"items": [
+								"grid_field_label1"
+							],
+							"field": "RecordDate",
+							"columnName": "field"
+						},
+						"cell_field9": {
+							"model": "cell_field",
+							"items": [
+								"grid_field1"
+							],
+							"field": "RecordDate",
+							"columnName": "field"
+						},
+						"footcell_field9": {
+							"model": "footcell_field",
+							"items": [],
+							"field": "RecordDate",
+							"columnName": "field"
+						},
+						"headcell_field10": {
+							"model": "headcell_field",
+							"items": [
+								"grid_field_label2"
+							],
+							"field": "RecordUser",
+							"columnName": "field"
+						},
+						"cell_field10": {
+							"model": "cell_field",
+							"items": [
+								"grid_field2"
+							],
+							"field": "RecordUser",
+							"columnName": "field"
+						},
+						"footcell_field10": {
+							"model": "footcell_field",
+							"items": [],
+							"field": "RecordUser",
+							"columnName": "field"
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				}
+			},
+			"items": {
+				"page_size": {
+					"type": "page_size"
+				},
+				"breadcrumb": {
+					"type": "breadcrumb"
+				},
+				"logo": {
+					"type": "logo"
+				},
+				"menu": {
+					"type": "menu"
+				},
+				"simple_search": {
+					"type": "simple_search"
+				},
+				"pagination": {
+					"type": "pagination"
+				},
+				"details_found": {
+					"type": "details_found"
+				},
+				"search_panel": {
+					"type": "search_panel",
+					"items": [
+						"search_panel_field5",
+						"search_panel_field9",
+						"search_panel_field8",
+						"search_panel_field7",
+						"search_panel_field6",
+						"search_panel_field",
+						"search_panel_field4",
+						"search_panel_field3",
+						"search_panel_field2",
+						"search_panel_field1"
+					],
+					"_flexiblePanel": true
+				},
+				"list_options": {
+					"type": "list_options",
+					"items": [
+						"export_selected",
+						"delete_selected",
+						"-6",
+						"advsearch_link",
+						"-1",
+						"show_search_panel",
+						"hide_search_panel",
+						"-4",
+						"save_search",
+						"-5",
+						"saved_searches",
+						"-",
+						"export",
+						"-3",
+						"import"
+					]
+				},
+				"show_search_panel": {
+					"type": "show_search_panel"
+				},
+				"hide_search_panel": {
+					"type": "hide_search_panel"
+				},
+				"search_panel_field1": {
+					"field": "Branch",
+					"type": "search_panel_field",
+					"alwaysOnPanel": true,
+					"required": false
+				},
+				"search_panel_field2": {
+					"field": "Field_ID",
+					"type": "search_panel_field",
+					"alwaysOnPanel": true,
+					"required": false
+				},
+				"search_panel_field3": {
+					"field": "ShortText_Value",
+					"type": "search_panel_field",
+					"alwaysOnPanel": false,
+					"required": false
+				},
+				"search_panel_field4": {
+					"field": "LongText_Value",
+					"type": "search_panel_field",
+					"alwaysOnPanel": false,
+					"required": false
+				},
+				"search_panel_field5": {
+					"field": "Check_Value",
+					"type": "search_panel_field",
+					"alwaysOnPanel": false,
+					"required": false
+				},
+				"expand_menu_button": {
+					"type": "expand_menu_button"
+				},
+				"collapse_button": {
+					"type": "collapse_button"
+				},
+				"add": {
+					"type": "add",
+					"popup": true
+				},
+				"export": {
+					"type": "export"
+				},
+				"-": {
+					"type": "-"
+				},
+				"export_selected": {
+					"type": "export_selected"
+				},
+				"-1": {
+					"type": "-"
+				},
+				"-2": {
+					"type": "-"
+				},
+				"print_panel": {
+					"type": "print_panel",
+					"items": [
+						"print_scope",
+						"print_records",
+						"print_button"
+					]
+				},
+				"print_scope": {
+					"type": "print_scope"
+				},
+				"print_button": {
+					"type": "print_button"
+				},
+				"print_records": {
+					"type": "print_records"
+				},
+				"delete": {
+					"type": "delete"
+				},
+				"delete_selected": {
+					"type": "delete_selected"
+				},
+				"master_info": {
+					"type": "master_info",
+					"tables": {
+						"1003051358": "true",
+						"2043860093": "true",
+						"2511791386": "true"
+					}
+				},
+				"search_panel_field": {
+					"field": "Group_ID",
+					"type": "search_panel_field",
+					"alwaysOnPanel": true,
+					"required": false
+				},
+				"username_button": {
+					"type": "username_button",
+					"items": [
+						"logout_link",
+						"adminarea_link"
+					]
+				},
+				"loginform_login": {
+					"type": "loginform_login",
+					"popup": false
+				},
+				"logout_link": {
+					"type": "logout_link"
+				},
+				"adminarea_link": {
+					"type": "adminarea_link"
+				},
+				"filter_panel": {
+					"type": "filter_panel",
+					"items": [
+						"filter_panel_field",
+						"filter_panel_field2",
+						"filter_panel_field1"
+					]
+				},
+				"filter_panel_field": {
+					"field": "Branch",
+					"type": "filter_panel_field"
+				},
+				"import": {
+					"type": "import"
+				},
+				"-3": {
+					"type": "-"
+				},
+				"simple_search_field": {
+					"type": "simple_search_field"
+				},
+				"simple_search_option": {
+					"type": "simple_search_option"
+				},
+				"sort_dropdown": {
+					"type": "sort_dropdown"
+				},
+				"save_search": {
+					"type": "save_search"
+				},
+				"-4": {
+					"type": "-"
+				},
+				"saved_searches": {
+					"type": "saved_searches"
+				},
+				"-5": {
+					"type": "-"
+				},
+				"filter_panel_field1": {
+					"field": "Field_ID",
+					"type": "filter_panel_field"
+				},
+				"filter_panel_field2": {
+					"field": "Group_ID",
+					"type": "filter_panel_field"
+				},
+				"advsearch_link": {
+					"type": "advsearch_link"
+				},
+				"-6": {
+					"type": "-"
+				},
+				"simple_grid_field": {
+					"field": "ID",
+					"type": "grid_field",
+					"inlineAdd": false,
+					"inlineEdit": false,
+					"clickSort": true,
+					"showFilter": true
+				},
+				"simple_grid_field8": {
+					"type": "grid_field_label",
+					"field": "ID",
+					"clickSort": true,
+					"showFilter": true
+				},
+				"simple_grid_field1": {
+					"field": "Branch",
+					"type": "grid_field",
+					"inlineAdd": true,
+					"inlineEdit": true,
+					"clickSort": true,
+					"showFilter": true
+				},
+				"simple_grid_field9": {
+					"type": "grid_field_label",
+					"field": "Branch",
+					"clickSort": true,
+					"showFilter": true
+				},
+				"simple_grid_field7": {
+					"field": "Group_ID",
+					"type": "grid_field",
+					"inlineAdd": true,
+					"inlineEdit": true,
+					"clickSort": true,
+					"showFilter": true
+				},
+				"simple_grid_field10": {
+					"type": "grid_field_label",
+					"field": "Group_ID",
+					"clickSort": true,
+					"showFilter": true
+				},
+				"simple_grid_field2": {
+					"field": "Field_ID",
+					"type": "grid_field",
+					"inlineAdd": true,
+					"inlineEdit": true,
+					"clickSort": true,
+					"showFilter": true
+				},
+				"simple_grid_field11": {
+					"type": "grid_field_label",
+					"field": "Field_ID",
+					"clickSort": true,
+					"showFilter": true
+				},
+				"simple_grid_field3": {
+					"field": "ShortText_Value",
+					"type": "grid_field",
+					"inlineAdd": true,
+					"inlineEdit": true,
+					"clickSort": true,
+					"showFilter": true,
+					"hideEmpty": true
+				},
+				"simple_grid_field12": {
+					"type": "grid_field_label",
+					"field": "ShortText_Value",
+					"clickSort": true,
+					"showFilter": true
+				},
+				"simple_grid_field4": {
+					"field": "LongText_Value",
+					"type": "grid_field",
+					"inlineAdd": true,
+					"inlineEdit": true,
+					"clickSort": true,
+					"showFilter": true,
+					"hideEmpty": true
+				},
+				"simple_grid_field13": {
+					"type": "grid_field_label",
+					"field": "LongText_Value",
+					"clickSort": true,
+					"showFilter": true
+				},
+				"simple_grid_field5": {
+					"field": "Check_Value",
+					"type": "grid_field",
+					"inlineAdd": true,
+					"inlineEdit": true,
+					"clickSort": true,
+					"showFilter": true,
+					"hideEmpty": false
+				},
+				"simple_grid_field14": {
+					"type": "grid_field_label",
+					"field": "Check_Value",
+					"clickSort": true,
+					"showFilter": true
+				},
+				"simple_grid_field6": {
+					"field": "File_Value",
+					"type": "grid_field",
+					"inlineAdd": true,
+					"inlineEdit": true,
+					"clickSort": true,
+					"showFilter": true,
+					"hideEmpty": true
+				},
+				"simple_grid_field15": {
+					"type": "grid_field_label",
+					"field": "File_Value",
+					"clickSort": true,
+					"showFilter": true
+				},
+				"grid_checkbox": {
+					"type": "grid_checkbox"
+				},
+				"grid_checkbox_head": {
+					"type": "grid_checkbox_head"
+				},
+				"grid_edit": {
+					"type": "grid_edit",
+					"popup": true
+				},
+				"grid_view": {
+					"type": "grid_view",
+					"popup": true
+				},
+				"grid_field": {
+					"field": "Number_Value",
+					"type": "grid_field",
+					"inlineAdd": true,
+					"inlineEdit": true,
+					"hideEmpty": true
+				},
+				"grid_field_label": {
+					"type": "grid_field_label",
+					"field": "Number_Value",
+					"clickSort": true
+				},
+				"grid_field1": {
+					"field": "RecordDate",
+					"type": "grid_field",
+					"inlineAdd": false,
+					"inlineEdit": false
+				},
+				"grid_field_label1": {
+					"type": "grid_field_label",
+					"field": "RecordDate",
+					"clickSort": true
+				},
+				"grid_field2": {
+					"field": "RecordUser",
+					"type": "grid_field",
+					"inlineAdd": false,
+					"inlineEdit": false
+				},
+				"grid_field_label2": {
+					"type": "grid_field_label",
+					"field": "RecordUser",
+					"clickSort": true
+				},
+				"search_panel_field6": {
+					"field": "Number_Value",
+					"type": "search_panel_field",
+					"alwaysOnPanel": false,
+					"required": false
+				},
+				"search_panel_field7": {
+					"field": "RecordDate",
+					"type": "search_panel_field",
+					"alwaysOnPanel": false,
+					"required": false
+				},
+				"search_panel_field8": {
+					"field": "RecordUser",
+					"type": "search_panel_field",
+					"alwaysOnPanel": false,
+					"required": false
+				},
+				"update_selected": {
+					"type": "update_selected",
+					"popup": true
+				},
+				"columns_control": {
+					"type": "columns_control",
+					"reorder": true,
+					"showHide": true
+				},
+				"grid_copy": {
+					"type": "grid_copy",
+					"popup": true
+				},
+				"search_panel_field9": {
+					"field": "ID",
+					"type": "search_panel_field"
+				}
+			},
+			"dbProps": {},
+			"spreadsheetGrid": false,
+			"autoAddNewRecord": true,
+			"version": 13,
+			"pageWidth": "full",
+			"reorderRows": false,
+			"reorderRowsField": "",
+			"addToBottom": false,
+			"imageItem": {
+				"type": "page_image"
+			},
+			"imageBgColor": "#f2f2f2",
+			"controlsBgColor": "white",
+			"imagePosition": "right",
+			"listTotals": 1,
+			"title": {}
+		},
+		{
+			"id": "print",
+			"type": "print",
+			"layoutId": "basic",
+			"disabled": false,
+			"default": 0,
+			"forms": {
+				"above-grid": {
+					"modelId": "print-above-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"print_pages"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"below-grid": {
+					"modelId": "print-below-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": []
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"top": {
+					"modelId": "print-header",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c2"
+								}
+							],
+							"section": ""
+						},
+						{
+							"cells": [
+								{
+									"cell": "c4"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c2": {
+							"model": "c2",
+							"items": [
+								"print_header",
+								"print_subheader"
+							]
+						},
+						"c4": {
+							"model": "c4",
+							"items": [
+								"master_info"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"grid": {
+					"modelId": "simple-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"simple_grid_field",
+								"simple_grid_field1",
+								"simple_grid_field2",
+								"simple_grid_field3",
+								"simple_grid_field4",
+								"simple_grid_field5",
+								"simple_grid_field6",
+								"simple_grid_field7",
+								"simple_grid_field8",
+								"simple_grid_field9",
+								"simple_grid_field10"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				}
+			},
+			"items": {
+				"print_header": {
+					"type": "print_header"
+				},
+				"print_subheader": {
+					"type": "print_subheader"
+				},
+				"print_pages": {
+					"type": "print_pages"
+				},
+				"simple_grid_field": {
+					"field": "ID",
+					"type": "simple_grid_field"
+				},
+				"simple_grid_field1": {
+					"field": "Branch",
+					"type": "simple_grid_field"
+				},
+				"simple_grid_field2": {
+					"field": "Field_ID",
+					"type": "simple_grid_field"
+				},
+				"simple_grid_field3": {
+					"field": "ShortText_Value",
+					"type": "simple_grid_field"
+				},
+				"simple_grid_field4": {
+					"field": "LongText_Value",
+					"type": "simple_grid_field"
+				},
+				"simple_grid_field5": {
+					"field": "Check_Value",
+					"type": "simple_grid_field"
+				},
+				"simple_grid_field6": {
+					"field": "File_Value",
+					"type": "simple_grid_field"
+				},
+				"master_info": {
+					"type": "master_info",
+					"tables": {
+						"1003051358": "true",
+						"2043860093": "true",
+						"2511791386": "true"
+					}
+				},
+				"simple_grid_field7": {
+					"field": "Group_ID",
+					"type": "simple_grid_field"
+				},
+				"simple_grid_field8": {
+					"field": "Number_Value",
+					"type": "simple_grid_field"
+				},
+				"simple_grid_field9": {
+					"field": "RecordDate",
+					"type": "simple_grid_field"
+				},
+				"simple_grid_field10": {
+					"field": "RecordUser",
+					"type": "simple_grid_field"
+				}
+			},
+			"dbProps": {},
+			"version": 13,
+			"imageItem": {
+				"type": "page_image"
+			},
+			"imageBgColor": "#f2f2f2",
+			"controlsBgColor": "white",
+			"imagePosition": "right",
+			"listTotals": 1,
+			"title": {}
+		},
+		{
+			"id": "search",
+			"type": "search",
+			"layoutId": "nomenu",
+			"disabled": false,
+			"default": 0,
+			"forms": {
+				"above-grid": {
+					"modelId": "search-above-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1",
+									"colspan": 2
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": []
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"below-grid": {
+					"modelId": "search-below-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"search_search",
+								"search_reset",
+								"search_back_list",
+								"search_cancel"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"top": {
+					"modelId": "search-header",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"search_header"
+							]
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"grid": {
+					"modelId": "simple-search",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c3"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c3": {
+							"model": "c3",
+							"items": [
+								"integrated_search_field",
+								"integrated_search_field1",
+								"integrated_search_field2",
+								"integrated_search_field3",
+								"integrated_search_field4",
+								"integrated_search_field5",
+								"integrated_search_field6",
+								"integrated_search_field7",
+								"integrated_search_field8",
+								"integrated_search_field9"
+							]
+						}
+					},
+					"deferredItems": [],
+					"separateLabels": false
+				}
+			},
+			"items": {
+				"search_header": {
+					"type": "search_header"
+				},
+				"search_reset": {
+					"type": "search_reset"
+				},
+				"search_back_list": {
+					"type": "search_back_list"
+				},
+				"search_search": {
+					"type": "search_search"
+				},
+				"search_cancel": {
+					"type": "search_cancel"
+				},
+				"integrated_search_field": {
+					"field": "ID",
+					"type": "integrated_search_field",
+					"orientation": 0
+				},
+				"integrated_search_field1": {
+					"field": "Branch",
+					"type": "integrated_search_field",
+					"orientation": 0
+				},
+				"integrated_search_field2": {
+					"field": "Field_ID",
+					"type": "integrated_search_field",
+					"orientation": 0
+				},
+				"integrated_search_field3": {
+					"field": "ShortText_Value",
+					"type": "integrated_search_field",
+					"orientation": 0
+				},
+				"integrated_search_field4": {
+					"field": "LongText_Value",
+					"type": "integrated_search_field",
+					"orientation": 0
+				},
+				"integrated_search_field5": {
+					"field": "Check_Value",
+					"type": "integrated_search_field",
+					"orientation": 0
+				},
+				"integrated_search_field6": {
+					"field": "Group_ID",
+					"type": "integrated_search_field",
+					"orientation": 0
+				},
+				"integrated_search_field7": {
+					"field": "Number_Value",
+					"type": "integrated_search_field",
+					"orientation": 0
+				},
+				"integrated_search_field8": {
+					"field": "RecordDate",
+					"type": "integrated_search_field",
+					"orientation": 0
+				},
+				"integrated_search_field9": {
+					"field": "RecordUser",
+					"type": "integrated_search_field",
+					"orientation": 0
+				}
+			},
+			"dbProps": {},
+			"version": 13,
+			"imageItem": {
+				"type": "page_image"
+			},
+			"imageBgColor": "#f2f2f2",
+			"controlsBgColor": "white",
+			"imagePosition": "right",
+			"listTotals": 1,
+			"title": {}
+		}
+	],
+	"geoCoding": {
+		"enabled": false,
+		"latField": "",
+		"lonField": "",
+		"addressFields": []
+	},
+	"caption": {
+		"English": "One Form Values",
+		"Farsi": "اطلاعات"
+	}
+}
